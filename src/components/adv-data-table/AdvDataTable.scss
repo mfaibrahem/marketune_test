@@ -1,0 +1,37 @@
+.adv-section-wrap {
+	margin-bottom: 62px;
+	.filter-form {
+		display: flex;
+		align-items: stretch;
+		.ant-picker {
+			border-right: 0;
+			border-radius: 2px 0 0 2px;
+			height: 34px;
+		}
+		button {
+			height: 34px;
+		}
+	}
+}
+.loading-table-wrap {
+	height: 400px;
+	max-height: 100vh;
+}
+
+.mini-chart-wrap {
+	background-color: #e3e2ff;
+	padding: 18px 24px;
+	h2 {
+		margin-bottom: 22px;
+		color: #8884d8;
+	}
+}
+.full-chart-wrap {
+	background-color: #d3eaff;
+	padding: 18px 24px;
+	margin-bottom: 52px;
+	h2 {
+		margin-bottom: 22px;
+		color: #107fe7;
+	}
+}

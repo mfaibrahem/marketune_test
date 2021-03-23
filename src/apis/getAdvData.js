@@ -2,8 +2,6 @@ import axios from "axios";
 
 const getAdvData = async () => {
 	const res = await axios.get("/getData");
-	console.log(res);
-
 	try {
 		if (res.status === 200 && res.data) {
 			return res.data;
@@ -13,4 +11,4 @@ const getAdvData = async () => {
 	}
 };
 
-export default getAdvData();
+export default getAdvData;
