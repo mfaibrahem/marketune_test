@@ -1,0 +1,149 @@
+@import "./config";
+
+.header-breadcrumb {
+	// background-image: url("../assets/imgs/bkgs/general-banner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: grid;
+	align-content: space-between;
+	height: 180px;
+	position: relative;
+
+	@include mediaLg {
+		height: 220px;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#1d283b, 0.8);
+	}
+
+	.page-title {
+		color: rgba(#fff, 0.8);
+		text-align: center;
+		margin-top: 32px;
+		position: relative;
+		z-index: 1;
+		// @include headingFont;
+		text-transform: capitalize;
+		font-size: 20px;
+		@include mediaLg {
+			font-size: 28px;
+		}
+	}
+
+	.breadcrumb-wrapper {
+		position: relative;
+		z-index: 1;
+		align-self: end;
+		background-color: rgba(#000, 0.6);
+		padding: 18px 22px;
+	}
+	.breadcrumb-ul {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		grid-gap: 2px;
+
+		.breadcrumb-li {
+			color: rgba(#fff, 0.8);
+			& + .breadcrumb-li {
+				&::before {
+					display: inline-block;
+					padding: 0 0.5rem;
+					color: rgba(#fff, 0.8);
+					content: "/";
+				}
+			}
+			a {
+				color: $main-app-color;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+$green: #008744;
+$blue: #0057e7;
+$red: #d62d20;
+$yellow: #ffa700;
+$white: #eee;
+
+// scaling... any units
+$width: 62px;
+
+.common-loader {
+	position: relative;
+	margin: 0 auto;
+	width: $width;
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 100%;
+	}
+
+	.circular {
+		animation: rotate 2s linear infinite;
+		height: 100%;
+		transform-origin: center center;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+
+	.path {
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+		animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+		stroke-linecap: round;
+	}
+
+	@keyframes rotate {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes dash {
+		0% {
+			stroke-dasharray: 1, 200;
+			stroke-dashoffset: 0;
+		}
+		50% {
+			stroke-dasharray: 89, 200;
+			stroke-dashoffset: -35px;
+		}
+		100% {
+			stroke-dasharray: 89, 200;
+			stroke-dashoffset: -124px;
+		}
+	}
+
+	@keyframes color {
+		100%,
+		0% {
+			stroke: $red;
+		}
+		40% {
+			stroke: $blue;
+		}
+		66% {
+			stroke: $green;
+		}
+		80%,
+		90% {
+			stroke: $yellow;
+		}
+	}
+}
