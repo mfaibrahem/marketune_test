@@ -1,6 +1,6 @@
 # TASK live demo
 
-https://wizardly-shirley-aa8e98.netlify.app
+https://gracious-mahavira-cce793.netlify.app/
 
 # marketune_test
 
