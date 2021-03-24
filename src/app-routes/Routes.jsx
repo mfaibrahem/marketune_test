@@ -7,7 +7,7 @@ const HomePage = lazy(() => import("../pages/home-page/HomePage"));
 const Routes = () => {
 	return (
 		<Switch>
-			<Route path={routerLinks.homePage}>
+			<Route exact path={routerLinks.homePage}>
 				<HomePage />
 			</Route>
 
